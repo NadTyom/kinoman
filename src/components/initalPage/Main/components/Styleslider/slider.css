@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.carouselContainer {
+  margin-top: 25px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #1e2126;
+}
+
+#carouselImage {
+  border: 2px solid #1E90FF;
+  width: 60%;
+  height: 300px;
+  border-radius: 8px;
+}

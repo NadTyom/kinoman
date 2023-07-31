@@ -1,38 +1,580 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+html {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.foreword {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/Foreward.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.foreword_title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.foreword_title > h1 {
+  font-family: Inter;
+  font-size: 200px;
+  font-weight: 900;
+  line-height: 242px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(249, 249, 249, 1);
+  background: linear-gradient(180deg, #fff 0%, rgba(214, 203, 203, 0.8) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.foreword_title > p {
+  font-family: Inter;
+  font-size: 83px;
+  font-weight: 900;
+  line-height: 100px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(249, 249, 249, 1);
+  background: linear-gradient(
+    180deg,
+    #f9f9f9 0%,
+    rgba(186, 183, 170, 0.8) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main */
+.main {
+  width: 100%;
+  height: auto;
+  background-image: url("./images/backgroundphoto.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contain {
+  width: 82%;
+  height: 100%;
+  background: #1e2126;
+}
+/* Header */
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #292d33;
+}
+.logoSection {
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.logoAbout p > span {
+  color: #fd6500;
+  font-family: Inter;
+  font-size: 30px;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.logoAbout p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.logoAbout b {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.logRegFind {
+  width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-container input {
+  padding: 10px 40px 10px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 380px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #000;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search-container button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #444;
+  color: #fd6500;
+  width: 100px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #444;
+  padding: 10px;
+}
+.login {
+  width: 149px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fd6500;
+  border: none;
+  cursor: pointer;
+}
+.register {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.horizontal {
+  width: 90%;
+  height: 50px;
+  background: #292d33;
+  margin: auto;
+  margin-top: 52px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 28px;
+  list-style: none;
+  color: white;
+}
+
+.activeLink {
+  cursor: pointer;
+  color: #fd6500;
+  text-decoration: underline rgb(242, 255, 0);
+}
+
+.filmslistparrent {
+  width: 100%;
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filmsList {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 10px;
+}
+
+.filmsItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.59);
+  padding: 20px;
+  border: 5px inset #1e90ff;
+  max-width: 300px; 
+  margin: auto; 
+}
+
+.filmsItem img {
+  width: 100%;
+  height: auto;
+  max-height: 400px; 
+  object-fit: cover; 
+}
+
+.filmsItem p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: center; 
+}
+
+
+/* open log reg */
+.form-wrapper {
+  width: 450px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url("./images/Foreward.png");
+  background-size: cover;
+}
+.regHorizontal {
+  display: flex;
+  justify-content: space-around;
+}
+.form-wrapper h2 {
+  color: #fd6500;
+  font-weight: 600;
+  font-size: 34px;
+}
+.log {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding: 20px;
+  border-radius: 5px;
+  top: 80px;
+  right: 60px;
+  backdrop-filter: blur(5px);
+  display: none;
+}
+
+.log label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.log input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.log button:last-child {
+  background-color: #dc3545;
+  margin-top: 5px;
+}
+
+.log button:hover {
+  background-color: #0056b3;
+}
+
+.log button:last-child:hover {
+  background-color: #c82333;
+}
+.btnForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btnForm button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+.btnForm button:last-child {
+  background-color: #dc3545;
+  margin-top: 5px;
+}
+
+.btnForm button:hover {
+  background-color: #0056b3;
+}
+
+.btnForm button:last-child:hover {
+  background-color: #c82333;
+}
+
+.log.active {
+  display: flex;
+  z-index: 1;
+}
+
+.searchError > p {
+  color: red;
+  font-size: 40px;
+}
+.parentContainer {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchResults {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  z-index: 1;
+  text-align: center;
+  background-color: #1e2126;
+}
+.searchResults img {
+  border: 2px solid #f0f;
+}
+.searchResults p {
+  font-size: 26px;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: -webkit-linear-gradient(#eee, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 190px;
+  background: #292d33;
+}
+.parentlogos {
+  width: 50%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.reg {
+  position: absolute;
+  top: 0px;
+  right: 80px;
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.form-wrapper-reg {
+  width: 450px;
+  height: 550px;
+  background-image: url("./images/Foreward.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-wrapper-reg p {
+  font-size: 30px;
+  cursor: pointer;
+  color: red;
+  align-self: flex-end;
+}
+
+.regHorizontal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form-wrapper-reg h2 {
+  color: #fd6500;
+  font-weight: 600;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.registration {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.registration label {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.registration div {
+  display: flex;
+  flex-direction: column;
+}
+.registration div input {
+  width: 350px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.registration button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.registration button:hover {
+  background-color: #0056b3;
+}
+
+.reg.active {
+  display: flex;
+  z-index: 1;
+}
+/* Media */
+header {
+  @media (max-width: 767px) {
+    height:auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    header{
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+.filmsList {
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.horizontal {
+  @media (max-width: 767px) {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 24px;
+  }
+}
+
+@media  (min-width:767px) and (max-width:1023px) {
+  header  {
+    width: 100%;
+    height: auto;
+  }
+  .search-container input {
+    width: 150px;
+    height: 50px;
+
+  }
+  
+}
+@media screen and (max-width:720px){
+  header  {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .search-container input {
+    width: 100px;
+    height: 50px;
+
+  }
+  .search-container button {
+    margin-top: 10px;
+    width: 60px;
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+
+  }
+
+  .logRegFind{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .horizontal{
+    height: auto;
+  }
+  .footer{
+    width: auto;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .parentlogos{
+    width: 100%;
+
   }
 }

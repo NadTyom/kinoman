@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useMemo } from "react";
+import UseTimeout from "./UseTime";
+import { FILMSHISTORY } from "./FILMSHISTORY";
+import "./App.css";
 
 function App() {
+  const [filterText, setFilterText] = useState("Բոլորը");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const filterFilms = (category) => {
+    if (category === "Բոլորը") {
+      return FILMSHISTORY;
+    }
+    return FILMSHISTORY.filter((elm) => elm.category === category);
+  };
+
+  const films = useMemo(() => {
+    if (searchResults.length > 0) {
+      return searchResults;
+    } else {
+      return filterFilms(filterText);
+    }
+  }, [filterText, searchResults]);
+
+  const handleSearch = (query) => {
+    const lowerCaseQuery = query.toLowerCase();
+    const results = FILMSHISTORY.filter((film) =>
+      film.name.toLowerCase().includes(lowerCaseQuery)
+    );
+    setSearchResults(results);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UseTimeout
+      films={films}
+      onFilter={(text) => {
+        setFilterText(text);
+      }}
+      onSearch={handleSearch}
+      searchResults={searchResults}
+    />
   );
 }
 
